@@ -10,6 +10,7 @@ const lettersInput = document.querySelector("#letters")
 const numbersInput = document.querySelector("#numbers")
 const symbolsInput = document.querySelector("#symbols")
 const copyPasswordButton = document.querySelector("#copy-password")
+const alertaSenhorDiv = document.querySelector("#alerta-senha")
 
 
 // Funções
@@ -56,7 +57,8 @@ const generatePassword = (getLetterLowerCase,
 
     if(symbolsInput.checked) {
         generators.push(getSymbol)
-    }
+    } 
+     
 
     if (generators.length === 0) {
         return
@@ -91,3 +93,28 @@ generatePasswordButton.addEventListener("click", (e) => {
 openCloseGeneratorButton.addEventListener("click", () => {
     generatePasswordContainer.classList.toggle("hide")
 })
+
+symbolsInput.addEventListener("click", ()=> { // coloquei a opção de só gerar senhas com símbolos
+    if(!symbolsInput.checked) {
+        alertaSenhorDiv.style.display = "block"
+        document.getElementById("generate-password").disabled = true
+    } else {
+        alertaSenhorDiv.style.display = "none"
+        document.getElementById("generate-password").disabled = false
+    }
+})
+
+copyPasswordButton.addEventListener("click", (e) => {
+    e.preventDefault()
+
+    const password = generatedPasswordElement.querySelector("h4").innerText
+
+    navigator.clipboard.writeText(password).then(() => {
+        copyPasswordButton.innerText = "Senha copiada com sucesso!"
+
+        setTimeout(() => {
+            copyPasswordButton.innerText = "Copiar"
+        }, 2000)
+    })
+})
+
