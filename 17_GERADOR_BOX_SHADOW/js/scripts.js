@@ -1,3 +1,4 @@
+
 class BoxShadowGenerator {
     constructor( // argumentos recebidos de cada instância
         horizontal,
