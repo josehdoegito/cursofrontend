@@ -1,0 +1,87 @@
+POST http://localhost:3000/api/services
+Content-Type: application/json
+
+{
+      "name": "Decoração",
+      "description": "Escolha a decoração para sua festa, e nós a montamos.",
+      "price": 1400,
+      "image": "https://images.unsplash.com/photo-1478146059778-26028b07395a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=892&q=80"
+    }
+
+###
+GET http://localhost:3000/api/services  
+
+###
+GET http://localhost:3000/api/services/673b6ab272910fdc7edc7c49
+
+###
+DELETE http://localhost:3000/api/services/673b6ab272910fdc7edc7c49
+
+###
+PUT http://localhost:3000/api/services/673b6c2572910fdc7edc7c4e
+Content-Type: application/json
+
+{
+    "name": "TESTE ATUALIZAÇÃO",
+    "description": "Alguma descrição",
+    "price": 2500,
+    "image": "https://images.unsplash.com/photo-1729194292689-be924899456d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+}
+
+###
+POST http://localhost:3000/api/parties
+Content-Type: application/json
+
+{
+    "title": "Meu evento 2",
+    "author": "José",
+    "description" : "Uma festa de aniversário",
+    "budget": 9000,
+    "image": "https://media.istockphoto.com/id/639112364/pt/foto/fun-at-disco.jpg?s=2048x2048&w=is&k=20&c=10tNVoc2aN03SVq_MT_6LlHwtKovR0Oqk3Ipv2c03Kw=",
+    "services": [
+        {
+            "name": "Algum serviço 1",
+            "description": "Alguma descrição",
+            "price": 3000,
+            "image": "https://images.unsplash.com/photo-1729194292689-be924899456d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Algum serviço 2",
+            "description": "Alguma descrição",
+            "price": 1600,
+            "image": "https://images.unsplash.com/photo-1729194292689-be924899456d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+    ]
+}
+
+###
+GET http://localhost:3000/api/parties  
+
+###
+DELETE http://localhost:3000/api/parties/673b7a8a33bdabe07f7d0089
+
+###
+PUT http://localhost:3000/api/parties/673b7be933bdabe07f7d008d
+Content-Type: application/json
+
+{
+    "title": "Meu evento 2",
+    "author": "José",
+    "description" : "Uma festa de aniversário",
+    "budget": 1000,
+    "image": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "services": [
+        {
+            "name": "Algum serviço 1",
+            "description": "Alguma descrição",
+            "price": 3000,
+            "image": "https://images.unsplash.com/photo-1729194292689-be924899456d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Algum serviço 2",
+            "description": "Alguma descrição",
+            "price": 1600,
+            "image": "https://images.unsplash.com/photo-1729194292689-be924899456d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+    ]
+}
